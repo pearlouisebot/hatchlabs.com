@@ -144,23 +144,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 48px;
-            height: 48px;
-            border: 1px solid #FFD900;
+            width: 40px;
+            height: 40px;
+            border: none;
             border-radius: 0;
             color: #fff;
             text-decoration: none;
-            transition: transform 0.25s, border-color 0.25s;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            background: rgba(255,255,255,0.03);
+            transition: transform 0.25s, opacity 0.25s;
+            background: transparent;
+            opacity: 0.5;
         }
         .social a:hover {
-            transform: translateY(-4px);
-            border-color: #FFE552;
+            transform: translateY(-3px);
+            opacity: 1;
         }
         .social a svg {
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             fill: #fff;
         }
 
