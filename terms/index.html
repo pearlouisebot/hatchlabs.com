@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Hatch Labs</title>
+    <meta name="description" content="Terms of Service for Hatch Labs">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&family=Sora:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #121212;
+            color: #fff;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: url('../bg.svg') center/cover no-repeat;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .badge {
+            text-transform: uppercase;
+            font-size: 0.75em;
+            letter-spacing: 0.3rem;
+            color: #FFD900;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 1.1em;
+            font-weight: 300;
+            letter-spacing: 0.025rem;
+        }
+        .navigation {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .navigation a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 12px 24px;
+            border-radius: 2rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+            font-weight: 300;
+            letter-spacing: 0.05rem;
+            display: inline-block;
+        }
+        .navigation a:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #FFD900;
+            color: #fff;
+        }
+        .navigation a.current {
+            background: #FFD900;
+            color: #000;
+            border-color: #FFD900;
+            font-weight: 500;
+        }
+        h2 {
+            color: #FFD900;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 217, 0, 0.3);
+        }
+        h3 {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+        h4 {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+        p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 16px;
+            font-weight: 300;
+        }
+        ul, ol {
+            color: rgba(255,255,255,0.7);
+            margin: 16px 0;
+            padding-left: 30px;
+        }
+        li {
+            margin: 8px 0;
+            font-weight: 300;
+        }
+        .intro {
+            background: rgba(255, 217, 0, 0.1);
+            border: 1px solid rgba(255, 217, 0, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        .intro h3 {
+            color: #FFD900;
+            margin-top: 0;
+        }
+        .highlight {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .contact-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        .contact-box h3 {
+            color: #FFD900;
+            margin-top: 0;
+        }
+        strong {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+        a {
+            color: #FFD900;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #FFE552;
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9rem;
+            font-weight: 200;
+        }
+        .back-to-home {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            border-radius: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            font-weight: 300;
+            letter-spacing: 0.05rem;
+        }
+        .back-to-home:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: #FFD900;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-to-home">← Back to Hatch Labs</a>
+        
+        <div class="header">
+            <p class="badge"><strong>Hatch Labs</strong></p>
+            <h1>Terms of Service</h1>
+            <p class="effective-date">Effective Date: March 6, 2026</p>
+            
+            <p><a href="/" style="color: #FFD900;">← Back to Home</a> | <a href="/privacy/" style="color: #FFD900;">Privacy Policy</a> | <a href="/security/" style="color: #FFD900;">Security Policy</a></p>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing or using the services provided by Hatch Labs Holdings LLC ("Company," "we," "us," or "our") through the AmandasList platform and related services (collectively, the "Service"), you ("User," "you," or "your") agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you may not access or use the Service.</p>
+
+            <h2>2. Eligibility</h2>
+            <p>To use the Service, you must:</p>
+            <ul>
+                <li>Be at least 18 years of age</li>
+                <li>Be a legal resident of the United States</li>
+                <li>Have the legal capacity to enter into a binding agreement</li>
+                <li>Not be prohibited from using the Service under applicable law</li>
+                <li>Successfully complete our verification process, including identity and financial verification through Plaid, Inc.</li>
+            </ul>
+
+            <h2>3. Account Registration and Verification</h2>
+            <h3>3.1 Account Creation</h3>
+            <p>You must create an account to access the Service. You agree to provide accurate, current, and complete information during registration and to keep your account information updated.</p>
+            <h3>3.2 Identity and Financial Verification</h3>
+            <p>As a condition of membership, all users must complete identity and financial verification through our third-party verification partner, Plaid, Inc. By using the Service, you authorize us to use Plaid to verify your identity, income, assets, and/or employment as described in our <a href="/privacy/" style="color: #FFD900;">Privacy Policy</a>.</p>
+            <h3>3.3 Account Security</h3>
+            <p>You are responsible for maintaining the confidentiality of your account credentials, including your password and multi-factor authentication methods. You agree to notify us immediately of any unauthorized use of your account.</p>
+
+            <h2>4. Use of the Service</h2>
+            <h3>4.1 Permitted Use</h3>
+            <p>The Service is provided for personal, non-commercial use for the purpose of networking and connecting with other verified professionals.</p>
+            <h3>4.2 Prohibited Conduct</h3>
+            <p>You agree not to:</p>
+            <ul>
+                <li>Provide false, misleading, or inaccurate information during registration or verification</li>
+                <li>Create more than one account or create an account on behalf of another person</li>
+                <li>Use the Service for any unlawful purpose or in violation of any applicable laws</li>
+                <li>Harass, abuse, stalk, threaten, or intimidate other users</li>
+                <li>Send unsolicited commercial messages or spam</li>
+                <li>Attempt to circumvent our verification processes</li>
+                <li>Scrape, data mine, or use automated means to access the Service</li>
+                <li>Reverse engineer, decompile, or disassemble any aspect of the Service</li>
+                <li>Interfere with or disrupt the Service or servers or networks connected to the Service</li>
+                <li>Impersonate any person or entity</li>
+                <li>Share, sell, or transfer your account to any third party</li>
+            </ul>
+
+            <h2>5. Membership and Fees</h2>
+            <p>Certain features of the Service may require payment of fees. All fees are described at the time of purchase. Fees are non-refundable except as required by applicable law or as explicitly stated in these Terms. We reserve the right to change our fees at any time with reasonable notice.</p>
+
+            <h2>6. Intellectual Property</h2>
+            <h3>6.1 Company Property</h3>
+            <p>The Service, including all content, features, and functionality (including but not limited to text, graphics, logos, icons, images, audio, video, software, and the design, selection, and arrangement thereof), is owned by the Company, its licensors, or other providers and is protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.</p>
+            <h3>6.2 User Content</h3>
+            <p>You retain ownership of content you submit to the Service. By submitting content, you grant us a non-exclusive, worldwide, royalty-free, sublicensable license to use, reproduce, modify, display, and distribute your content in connection with operating and providing the Service.</p>
+
+            <h2>7. Privacy</h2>
+            <p>Your use of the Service is also governed by our <a href="/privacy/" style="color: #FFD900;">Privacy Policy</a>, which is incorporated into these Terms by reference. Please review our Privacy Policy to understand our practices regarding your personal information.</p>
+
+            <h2>8. Disclaimers</h2>
+            <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, SECURE, OR ERROR-FREE.</p>
+            <p>WE DO NOT GUARANTEE THE ACCURACY, COMPLETENESS, OR RELIABILITY OF ANY VERIFICATION RESULTS OR USER INFORMATION. VERIFICATION THROUGH PLAID CONFIRMS CERTAIN FINANCIAL AND IDENTITY DATA BUT DOES NOT CONSTITUTE AN ENDORSEMENT OR GUARANTEE OF ANY USER'S CHARACTER, INTENTIONS, OR SUITABILITY.</p>
+
+            <h2>9. Limitation of Liability</h2>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE COMPANY, ITS AFFILIATES, DIRECTORS, OFFICERS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM:</p>
+            <ul>
+                <li>Your access to or use of (or inability to access or use) the Service</li>
+                <li>Any conduct or content of any third party on the Service</li>
+                <li>Any interactions with other users, whether online or offline</li>
+                <li>Unauthorized access, use, or alteration of your content or information</li>
+            </ul>
+            <p>OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU HAVE PAID TO US IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.</p>
+
+            <h2>10. Indemnification</h2>
+            <p>You agree to indemnify, defend, and hold harmless the Company and its affiliates, directors, officers, employees, and agents from and against any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising out of or related to your use of the Service, your violation of these Terms, or your violation of any rights of another.</p>
+
+            <h2>11. Dispute Resolution</h2>
+            <h3>11.1 Governing Law</h3>
+            <p>These Terms shall be governed by and construed in accordance with the laws of the State of Texas, without regard to its conflict of law provisions.</p>
+            <h3>11.2 Arbitration</h3>
+            <p>Any dispute arising out of or relating to these Terms or the Service shall be resolved by binding arbitration administered by the American Arbitration Association (AAA) in accordance with its Consumer Arbitration Rules. The arbitration shall take place in Austin, Texas. You and the Company agree that any dispute resolution proceedings will be conducted only on an individual basis and not in a class, consolidated, or representative action.</p>
+            <h3>11.3 Exceptions</h3>
+            <p>Notwithstanding the above, either party may seek injunctive or other equitable relief in any court of competent jurisdiction to prevent the actual or threatened infringement of intellectual property rights.</p>
+
+            <h2>12. Termination</h2>
+            <p>We may suspend or terminate your account and access to the Service at any time, with or without cause, and with or without notice. Upon termination, your right to use the Service will immediately cease. You may delete your account at any time through the Service or by contacting us at amanda@hatchlabs.com. Provisions that by their nature should survive termination shall survive, including ownership, warranty disclaimers, indemnity, and limitations of liability.</p>
+
+            <h2>13. Changes to Terms</h2>
+            <p>We reserve the right to modify these Terms at any time. We will provide notice of material changes by posting the updated Terms on the Service and updating the "Effective Date." Your continued use of the Service after the effective date of any changes constitutes your acceptance of the revised Terms.</p>
+
+            <h2>14. General Provisions</h2>
+            <ul>
+                <li><strong>Entire Agreement:</strong> These Terms, together with the Privacy Policy, constitute the entire agreement between you and the Company regarding the Service.</li>
+                <li><strong>Severability:</strong> If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</li>
+                <li><strong>Waiver:</strong> No waiver of any term shall be deemed a further or continuing waiver of such term or any other term.</li>
+                <li><strong>Assignment:</strong> You may not assign or transfer these Terms without our prior written consent. We may assign these Terms without restriction.</li>
+            </ul>
+
+            <h2>15. Contact Information</h2>
+            <p>If you have any questions about these Terms, please contact us at:</p>
+            <p><strong>Hatch Labs Holdings LLC</strong><br>
+            701 Tillery Street, Suite 12<br>
+            Austin, TX 78702<br>
+            Email: amanda@hatchlabs.com</p></div>
+    </div>
+</body>
+</html>
