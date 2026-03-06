@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Hatch Labs</title>
+    <meta name="description" content="Privacy Policy for Hatch Labs">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&family=Sora:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #121212;
+            color: #fff;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: url('../bg.svg') center/cover no-repeat;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .badge {
+            text-transform: uppercase;
+            font-size: 0.75em;
+            letter-spacing: 0.3rem;
+            color: #FFD900;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 1.1em;
+            font-weight: 300;
+            letter-spacing: 0.025rem;
+        }
+        .navigation {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .navigation a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 12px 24px;
+            border-radius: 2rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+            font-weight: 300;
+            letter-spacing: 0.05rem;
+            display: inline-block;
+        }
+        .navigation a:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #FFD900;
+            color: #fff;
+        }
+        .navigation a.current {
+            background: #FFD900;
+            color: #000;
+            border-color: #FFD900;
+            font-weight: 500;
+        }
+        h2 {
+            color: #FFD900;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 217, 0, 0.3);
+        }
+        h3 {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+        h4 {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+        p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 16px;
+            font-weight: 300;
+        }
+        ul, ol {
+            color: rgba(255,255,255,0.7);
+            margin: 16px 0;
+            padding-left: 30px;
+        }
+        li {
+            margin: 8px 0;
+            font-weight: 300;
+        }
+        .intro {
+            background: rgba(255, 217, 0, 0.1);
+            border: 1px solid rgba(255, 217, 0, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        .intro h3 {
+            color: #FFD900;
+            margin-top: 0;
+        }
+        .highlight {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .contact-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        .contact-box h3 {
+            color: #FFD900;
+            margin-top: 0;
+        }
+        strong {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+        a {
+            color: #FFD900;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #FFE552;
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9rem;
+            font-weight: 200;
+        }
+        .back-to-home {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            border-radius: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            font-weight: 300;
+            letter-spacing: 0.05rem;
+        }
+        .back-to-home:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: #FFD900;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-to-home">← Back to Hatch Labs</a>
+        
+        <div class="header">
+            <p class="badge"><strong>Hatch Labs</strong></p>
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">Building Tools for Humans — Protecting Your Privacy</p>
+        </div>
+
+        <div class="navigation">
+            <a href="/privacy/" class="current">Privacy Policy</a>
+            <a href="/security/">Security Policy</a>
+        </div>
+
+        <p style="text-align: center; color: rgba(255,255,255,0.6); font-style: italic; margin-bottom: 40px;">
+            Effective Date: March 6, 2026 | Last Updated: March 6, 2026
+        </p>
+
+        <div class="intro">
+            <h3>Introduction</h3>
+            <p>Hatch Labs Holdings LLC ("Hatch Labs," "we," "us," or "our") operates cutting-edge tools for human connection and verification. We are committed to protecting your privacy and being transparent about how we collect, use, and share your information.</p>
+            
+            <p><strong>Key Information:</strong></p>
+            <ul>
+                <li><strong>Company:</strong> Hatch Labs Holdings LLC (Delaware LLC, EIN 39-2892314)</li>
+                <li><strong>Address:</strong> 701 Tillery Street, Suite 12, Austin TX 78702</li>
+                <li><strong>Contact:</strong> amanda@hatchlabs.com</li>
+                <li><strong>CEO:</strong> Amanda Bradford</li>
+            </ul>
+            
+            <p>By using our Services, you agree to the collection and use of information as described in this Privacy Policy.</p>
+        </div>
+
+        <h2>1. Information We Collect</h2>
+
+        <h3>1.1 Information You Provide Directly</h3>
+        
+        <p><strong>Account Registration Information:</strong></p>
+        <ul>
+            <li>Full legal name</li>
+            <li>Email address</li>
+            <li>Phone number</li>
+            <li>Date of birth</li>
+            <li>Gender identity</li>
+            <li>Location (city, state)</li>
+            <li>Profile photos</li>
+        </ul>
+
+        <p><strong>Professional Information:</strong></p>
+        <ul>
+            <li>Educational background and degrees</li>
+            <li>Current employer and job title</li>
+            <li>Industry and work experience</li>
+            <li>Professional achievements</li>
+            <li>Career aspirations</li>
+        </ul>
+
+        <div class="highlight">
+            <h4>Identity and Income Verification (Required)</h4>
+            <p>Through our integration with Plaid, we collect the following information as a condition of joining our platform:</p>
+            
+            <p><strong>Identity Verification Data:</strong></p>
+            <ul>
+                <li>Full legal name verification</li>
+                <li>Date of birth verification</li>
+                <li>Address verification</li>
+                <li>Government-issued ID validation</li>
+                <li>Social Security Number verification (as required by Plaid)</li>
+            </ul>
+
+            <p><strong>Financial Account Information:</strong></p>
+            <ul>
+                <li>Bank account information and balances</li>
+                <li>Income verification data</li>
+                <li>Employment verification</li>
+                <li>Asset verification data</li>
+                <li>Transaction history (limited to verification purposes)</li>
+            </ul>
+
+            <p><em>Note: All financial data collection is processed through Plaid, Inc., a trusted financial services partner. For information about how Plaid handles your data, please review <a href="https://plaid.com/legal/end-user-privacy-policy/" target="_blank">Plaid's End User Privacy Policy</a>.</em></p>
+        </div>
+
+        <h3>1.2 Information Collected Automatically</h3>
+        
+        <p><strong>Usage Information:</strong></p>
+        <ul>
+            <li>App usage patterns and feature interactions</li>
+            <li>Time spent on different sections</li>
+            <li>Profile views and connection activities</li>
+            <li>Search queries and filters used</li>
+            <li>Device information (type, operating system, browser)</li>
+        </ul>
+
+        <p><strong>Technical Information:</strong></p>
+        <ul>
+            <li>IP address and location data</li>
+            <li>Device identifiers</li>
+            <li>Log files and error reports</li>
+            <li>Cookies and similar tracking technologies</li>
+            <li>Session information</li>
+        </ul>
+
+        <h2>2. How We Use Your Information</h2>
+
+        <h3>2.1 Primary Service Functions</h3>
+        
+        <p><strong>Membership Verification and Approval:</strong></p>
+        <ul>
+            <li>Verify your identity and professional status</li>
+            <li>Confirm income and asset information for membership eligibility</li>
+            <li>Maintain platform quality and exclusivity</li>
+            <li>Prevent fraud and ensure community safety</li>
+        </ul>
+
+        <p><strong>Platform Operation and Matching:</strong></p>
+        <ul>
+            <li>Create and maintain your profile</li>
+            <li>Provide matching and connection services</li>
+            <li>Facilitate communication between members</li>
+            <li>Personalize your experience and recommendations</li>
+        </ul>
+
+        <h2>3. Plaid Integration and Financial Data</h2>
+
+        <h3>3.1 Plaid Partnership</h3>
+        <p>Hatch Labs uses Plaid, Inc. to verify your identity and financial information as a requirement for membership. Plaid is a trusted financial technology company that enables secure connections to your financial institutions.</p>
+
+        <p><strong>What Plaid Collects:</strong></p>
+        <ul>
+            <li>Account information (account numbers, routing numbers, balances)</li>
+            <li>Identity information (name, address, phone number, email)</li>
+            <li>Transaction data (limited to verification purposes)</li>
+            <li>Income and employment information</li>
+        </ul>
+
+        <p><strong>How Plaid Protects Your Data:</strong></p>
+        <ul>
+            <li>Bank-level security with 256-bit encryption</li>
+            <li>Multi-factor authentication required</li>
+            <li>SOC 2 Type II compliance</li>
+            <li>Regular security audits and monitoring</li>
+        </ul>
+
+        <h2>4. How We Share Your Information</h2>
+
+        <h3>4.1 We Do Not Sell Your Information</h3>
+        <p>We do not sell, rent, or trade your personal information to third parties for their marketing purposes. Your data is valuable to us because it helps us provide better services to you, not because we profit from sharing it with others.</p>
+
+        <h3>4.2 Service Providers and Business Partners</h3>
+        <p>We share information with trusted service providers who help us operate our platform:</p>
+
+        <p><strong>Infrastructure and Technical Services:</strong></p>
+        <ul>
+            <li><strong>Supabase:</strong> Database hosting and management (SOC 2 compliant)</li>
+            <li><strong>Plaid:</strong> Identity and financial verification services</li>
+            <li><strong>Cloudflare:</strong> Content delivery and security services</li>
+            <li><strong>GitHub:</strong> Code repository and deployment services</li>
+        </ul>
+
+        <h2>5. Data Retention and Deletion</h2>
+
+        <h3>5.1 Retention Periods</h3>
+        
+        <p><strong>Active Account Data:</strong><br>
+        We retain your personal information for as long as your account is active and you continue to use our services.</p>
+
+        <p><strong>Financial Verification Data:</strong><br>
+        We retain financial verification data for a minimum period required by financial service regulations, typically:</p>
+        <ul>
+            <li>Identity verification records: 5 years after account closure</li>
+            <li>Income verification records: 3 years after account closure</li>
+            <li>Anti-fraud data: 7 years after account closure</li>
+        </ul>
+
+        <h3>5.2 Account Deletion</h3>
+        <p>You can delete your account at any time by contacting us at amanda@hatchlabs.com. Upon account deletion:</p>
+        <ul>
+            <li>Profile information deleted within 30 days</li>
+            <li>Financial verification data deleted within 30 days (subject to legal requirements)</li>
+            <li>Messages and communications deleted within 30 days</li>
+            <li>Anonymous usage analytics may be retained</li>
+        </ul>
+
+        <h2>6. Your Privacy Rights</h2>
+
+        <h3>6.1 Access and Portability</h3>
+        <p>You have the right to request information about what personal data we have collected about you, including categories of information, sources, and purposes for collection.</p>
+
+        <h3>6.2 California Consumer Privacy Act (CCPA) Rights</h3>
+        <p>If you are a California resident, you have additional rights under the CCPA:</p>
+        <ul>
+            <li><strong>Right to Know:</strong> Request specific information about how we collect, use, and share your personal information</li>
+            <li><strong>Right to Delete:</strong> Request deletion of your personal information</li>
+            <li><strong>Right to Opt-Out:</strong> Opt out of the sale of your personal information (Note: We do not sell personal information)</li>
+            <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising your rights</li>
+        </ul>
+
+        <h2>7. Security Measures</h2>
+
+        <h3>7.1 Technical Safeguards</h3>
+        
+        <p><strong>Data Encryption:</strong></p>
+        <ul>
+            <li>All data encrypted at rest using AES-256 encryption via Supabase</li>
+            <li>All data in transit protected with TLS 1.2 or higher encryption</li>
+            <li>Database-level row security to limit data access</li>
+            <li>Encryption key management through secure cloud infrastructure</li>
+        </ul>
+
+        <p><strong>Access Controls:</strong></p>
+        <ul>
+            <li>Multi-factor authentication required for all critical system access</li>
+            <li>Role-based access control with principle of least privilege</li>
+            <li>Regular access reviews and immediate deactivation upon termination</li>
+            <li>Administrative access logging and monitoring</li>
+        </ul>
+
+        <div class="contact-box">
+            <h3>Privacy Questions and Requests</h3>
+            <p>For questions about this Privacy Policy or to exercise your privacy rights:</p>
+            
+            <p><strong>Primary Contact:</strong></p>
+            <ul>
+                <li><strong>Email:</strong> amanda@hatchlabs.com</li>
+                <li><strong>Subject Line:</strong> "Privacy Policy Inquiry" or "Privacy Rights Request"</li>
+                <li><strong>Response Time:</strong> We will respond within 5 business days</li>
+            </ul>
+            
+            <p><strong>Mailing Address:</strong><br>
+            Hatch Labs Holdings LLC<br>
+            Attn: Privacy Officer<br>
+            701 Tillery Street, Suite 12<br>
+            Austin, TX 78702</p>
+        </div>
+
+        <h2>8. Changes to This Privacy Policy</h2>
+        
+        <p>We may update this Privacy Policy to reflect changes in our services, business practices, or applicable laws. For significant changes:</p>
+        <ul>
+            <li>Email notification to active users at least 30 days before changes take effect</li>
+            <li>Prominent notice on our website and platform</li>
+            <li>Clear explanation of what has changed and why</li>
+            <li>Opportunity to review and accept new terms</li>
+        </ul>
+
+        <div class="footer">
+            <p><strong>Last Updated:</strong> March 6, 2026<br>
+            <strong>Effective Date:</strong> March 6, 2026<br>
+            <strong>Next Review:</strong> March 6, 2027</p>
+            <p>© 2026 Hatch Labs Holdings LLC. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
