@@ -3,147 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hatch Labs — Venture Studio</title>
-    <meta name="description" content="Hatch Labs Holdings LLC is an Austin-based venture studio that builds and acquires mobile applications.">
+    <title>Hatch Labs — Consumer App Studio</title>
+    <meta name="description" content="Hatch Labs Holdings LLC builds and acquires consumer web and mobile applications. Based in Austin, Texas.">
     <meta property="og:site_name" content="Hatch Labs">
-    <meta property="og:title" content="Hatch Labs — Venture Studio">
+    <meta property="og:title" content="Hatch Labs — Consumer App Studio">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="Hatch Labs Holdings LLC is an Austin-based venture studio that builds and acquires mobile applications.">
+    <meta property="og:description" content="We build and acquire consumer web and mobile applications.">
     <meta property="og:url" content="https://hatchlabs.com">
     <meta property="twitter:card" content="summary_large_image">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Sora:wght@600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #0a0a0a;
-            color: #e0e0e0;
-            line-height: 1.7;
-        }
+        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.7; }
         a { color: #FFD900; text-decoration: none; }
         a:hover { text-decoration: underline; }
 
-        /* Nav */
-        nav {
-            position: sticky; top: 0; z-index: 100;
-            background: rgba(10,10,10,0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            padding: 0 24px;
-        }
-        .nav-inner {
-            max-width: 960px; margin: 0 auto;
-            display: flex; align-items: center; justify-content: space-between;
-            height: 64px;
-        }
-        .nav-logo {
-            font-family: 'Sora', sans-serif;
-            font-size: 1.15rem; font-weight: 600; color: #fff;
-            letter-spacing: 0.02em;
-        }
-        .nav-links { display: flex; gap: 28px; list-style: none; }
-        .nav-links a {
-            color: rgba(255,255,255,0.6); font-size: 0.875rem; font-weight: 400;
-            transition: color 0.2s;
-        }
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 0 24px; }
+        .nav-inner { max-width: 1040px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        .nav-logo { font-family: 'Sora', sans-serif; font-size: 1.15rem; font-weight: 700; color: #fff; letter-spacing: 0.02em; }
+        .nav-logo span { color: #FFD900; }
+        .nav-links { display: flex; gap: 24px; list-style: none; }
+        .nav-links a { color: rgba(255,255,255,0.6); font-size: 0.85rem; font-weight: 400; transition: color 0.2s; }
         .nav-links a:hover { color: #fff; text-decoration: none; }
 
-        /* Sections */
-        section { max-width: 960px; margin: 0 auto; padding: 80px 24px; }
+        section { max-width: 1040px; margin: 0 auto; padding: 80px 24px; }
         .hero { text-align: center; padding: 100px 24px 80px; }
-        .hero h1 {
-            font-family: 'Sora', sans-serif;
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            font-weight: 600; color: #fff; line-height: 1.15; margin-bottom: 20px;
-        }
-        .hero p { color: rgba(255,255,255,0.55); font-size: 1.1rem; font-weight: 300; max-width: 600px; margin: 0 auto 40px; }
+        .hero h1 { font-family: 'Sora', sans-serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 20px; }
+        .hero p { color: rgba(255,255,255,0.55); font-size: 1.05rem; font-weight: 300; max-width: 640px; margin: 0 auto 40px; line-height: 1.8; }
+        .hero-cta { display: inline-block; padding: 14px 36px; background: #FFD900; color: #000; font-weight: 600; font-size: 0.9rem; border-radius: 2rem; letter-spacing: 0.05em; transition: background 0.2s; }
+        .hero-cta:hover { background: #ffe552; text-decoration: none; }
 
-        h2 {
-            font-family: 'Sora', sans-serif;
-            font-size: 1.75rem; font-weight: 600; color: #fff; margin-bottom: 24px;
-        }
-        .divider {
-            width: 100%; height: 1px;
-            background: rgba(255,255,255,0.08);
-        }
+        h2 { font-family: 'Sora', sans-serif; font-size: 1.6rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+        h3 { color: #fff; font-size: 1.05rem; margin-bottom: 8px; }
+        .section-sub { color: rgba(255,255,255,0.45); font-size: 0.95rem; font-weight: 300; margin-bottom: 40px; max-width: 600px; }
+
+        .divider { width: 100%; height: 1px; background: rgba(255,255,255,0.06); }
+
+        /* Stats */
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; padding: 48px 24px; max-width: 1040px; margin: 0 auto; }
+        .stat-num { font-family: 'Sora', sans-serif; font-size: 2rem; font-weight: 700; color: #FFD900; }
+        .stat-label { color: rgba(255,255,255,0.4); font-size: 0.8rem; font-weight: 400; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.08em; }
 
         /* Cards */
-        .card-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px; margin-top: 32px;
-        }
-        .card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 12px; padding: 32px;
-        }
-        .card h3 { color: #fff; font-size: 1.1rem; margin-bottom: 8px; }
-        .card p { color: rgba(255,255,255,0.5); font-size: 0.9rem; font-weight: 300; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 32px; }
+        .card-icon { font-size: 1.8rem; margin-bottom: 16px; }
+        .card p { color: rgba(255,255,255,0.5); font-size: 0.9rem; font-weight: 300; line-height: 1.7; }
 
-        /* About */
-        .about-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px;
-        }
-        .about-grid p { color: rgba(255,255,255,0.55); font-weight: 300; }
+        /* Portfolio */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .portfolio-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 28px; }
+        .portfolio-tag { display: inline-block; font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; }
+        .tag-live { background: rgba(74,222,128,0.15); color: #4ade80; }
+        .tag-dev { background: rgba(255,217,0,0.15); color: #FFD900; }
+        .tag-acquired { background: rgba(96,165,250,0.15); color: #60a5fa; }
+        .portfolio-card h3 { margin-bottom: 4px; }
+        .portfolio-card .domain { color: rgba(255,255,255,0.3); font-size: 0.8rem; margin-bottom: 8px; }
+        .portfolio-card p { color: rgba(255,255,255,0.5); font-size: 0.875rem; font-weight: 300; }
+
+        /* Process */
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; counter-reset: step; }
+        .process-step { position: relative; padding: 28px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; }
+        .process-step::before { counter-increment: step; content: counter(step); font-family: 'Sora'; font-size: 2rem; font-weight: 700; color: rgba(255,217,0,0.2); display: block; margin-bottom: 12px; }
+        .process-step h3 { font-size: 0.95rem; }
+        .process-step p { color: rgba(255,255,255,0.45); font-size: 0.85rem; font-weight: 300; }
+
+        /* Two-col */
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+        .two-col p { color: rgba(255,255,255,0.55); font-weight: 300; font-size: 0.95rem; }
 
         /* Team */
-        .team-member {
-            display: flex; gap: 20px; align-items: flex-start;
-            margin-top: 24px;
-        }
-        .team-avatar {
-            width: 64px; height: 64px; border-radius: 50%;
-            background: rgba(255,217,0,0.15); display: flex; align-items: center;
-            justify-content: center; font-size: 1.5rem; flex-shrink: 0;
-        }
-        .team-info h3 { color: #fff; font-size: 1rem; margin-bottom: 2px; }
-        .team-info .role { color: #FFD900; font-size: 0.85rem; font-weight: 400; }
-        .team-info p { color: rgba(255,255,255,0.5); font-size: 0.875rem; font-weight: 300; margin-top: 6px; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .team-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 28px; }
+        .team-card .role { color: #FFD900; font-size: 0.85rem; font-weight: 400; margin-bottom: 8px; }
+        .team-card p { color: rgba(255,255,255,0.5); font-size: 0.875rem; font-weight: 300; }
 
         /* Contact */
-        .contact-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px;
-        }
-        .contact-item { margin-bottom: 24px; }
-        .contact-label { color: rgba(255,255,255,0.4); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
-        .contact-value { color: #fff; font-size: 1rem; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+        .contact-label { color: rgba(255,255,255,0.35); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+        .contact-value { color: #fff; font-size: 0.95rem; line-height: 1.6; }
 
         /* Waitlist */
-        .waitlist-form {
-            display: flex; gap: 8px; max-width: 420px; margin: 0 auto;
-        }
-        .waitlist-form input[type="email"] {
-            flex: 1; padding: 14px 18px; border-radius: 2rem;
-            border: 1px solid rgba(255,255,255,0.15);
-            background: rgba(255,255,255,0.06); color: #fff;
-            font-family: 'Inter', sans-serif; font-size: 0.875em; font-weight: 300; outline: none;
-        }
+        .waitlist-section { text-align: center; }
+        .waitlist-form { display: flex; gap: 8px; max-width: 440px; margin: 24px auto 0; }
+        .waitlist-form input[type="email"] { flex: 1; padding: 14px 18px; border-radius: 2rem; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.06); color: #fff; font-family: 'Inter'; font-size: 0.875em; font-weight: 300; outline: none; }
         .waitlist-form input:focus { border-color: #FFD900; }
         .waitlist-form input::placeholder { color: rgba(255,255,255,0.35); }
-        .waitlist-form button {
-            padding: 14px 28px; border-radius: 2rem; border: none;
-            background: #FFD900; color: #000; font-family: 'Inter', sans-serif;
-            font-size: 0.75em; font-weight: 500; text-transform: uppercase;
-            letter-spacing: 0.2rem; cursor: pointer; white-space: nowrap;
-            transition: background 0.25s;
-        }
+        .waitlist-form button { padding: 14px 28px; border-radius: 2rem; border: none; background: #FFD900; color: #000; font-family: 'Inter'; font-size: 0.75em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15rem; cursor: pointer; white-space: nowrap; }
         .waitlist-form button:hover { background: #FFE552; }
-        .form-msg { font-size: 0.8em; font-weight: 300; min-height: 1.5em; margin-top: 12px; text-align: center; }
+        .form-msg { font-size: 0.8em; font-weight: 300; min-height: 1.5em; margin-top: 10px; }
         .form-msg.success { color: #4ade80; }
         .form-msg.error { color: #f87171; }
 
-        /* Footer */
-        footer {
-            border-top: 1px solid rgba(255,255,255,0.06);
-            padding: 32px 24px; text-align: center;
-            color: rgba(255,255,255,0.3); font-size: 0.8rem;
-        }
-        footer a { color: rgba(255,255,255,0.4); }
+        footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 32px 24px; text-align: center; color: rgba(255,255,255,0.25); font-size: 0.8rem; }
+        footer a { color: rgba(255,255,255,0.35); }
 
-        @media (max-width: 640px) {
-            .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+        @media (max-width: 768px) {
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .two-col, .contact-grid { grid-template-columns: 1fr; gap: 24px; }
             .waitlist-form { flex-direction: column; }
             .waitlist-form button { width: 100%; }
+            .nav-links { gap: 14px; }
+            .nav-links a { font-size: 0.75rem; }
+        }
+        @media (max-width: 480px) {
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -151,10 +115,11 @@
 
 <nav>
     <div class="nav-inner">
-        <div class="nav-logo">Hatch Labs</div>
+        <div class="nav-logo">Hatch<span>Labs</span></div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
-            <li><a href="#what-we-do">What We Do</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#process">How We Work</a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="/privacy/">Privacy</a></li>
@@ -163,100 +128,189 @@
     </div>
 </nav>
 
+<!-- Hero -->
 <section class="hero">
-    <h1>We build and acquire mobile apps.</h1>
-    <p>Hatch Labs Holdings LLC is an Austin-based venture studio focused on building, buying, and scaling consumer mobile applications.</p>
+    <h1>We build consumer apps that people actually use.</h1>
+    <p>Hatch Labs is a venture studio that builds and acquires web and mobile applications in the consumer space. We take products from idea to scale — or acquire ones that are already working and make them better.</p>
+    <a href="#contact" class="hero-cta">Get in Touch</a>
+</section>
+
+<!-- Stats -->
+<div class="divider"></div>
+<div class="stats">
+    <div><div class="stat-num">10+</div><div class="stat-label">Apps in Portfolio</div></div>
+    <div><div class="stat-num">2M+</div><div class="stat-label">Users Reached</div></div>
+    <div><div class="stat-num">2014</div><div class="stat-label">Founded</div></div>
+    <div><div class="stat-num">Austin</div><div class="stat-label">Headquarters</div></div>
+</div>
+<div class="divider"></div>
+
+<!-- About -->
+<section id="about">
+    <h2>About Hatch Labs</h2>
+    <div class="two-col">
+        <div>
+            <p>Hatch Labs Holdings LLC is a venture studio headquartered in Austin, Texas. We build consumer web and mobile applications from the ground up, and we acquire existing apps with strong fundamentals and room to grow.</p>
+            <p style="margin-top: 16px;">Our focus areas include dating and relationships, social networking, personal finance, and health and wellness — categories where better technology and verified data create meaningfully better products.</p>
+        </div>
+        <div>
+            <p>Founded by Amanda Bradford, who previously built The League — a dating app that grew to over 2 million users across 155 cities before being acquired by Match Group — Hatch Labs brings a founder-operator's perspective to every product we touch.</p>
+            <p style="margin-top: 16px;">We are a registered Delaware LLC with offices in Austin, TX. We partner with Plaid, Apple, Google, and Amazon to bring our products to market. Our team combines deep product expertise with data-driven decision making and lean operations.</p>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- What We Do -->
+<section>
+    <h2>What We Do</h2>
+    <p class="section-sub">Three core activities drive our business.</p>
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-icon">🛠️</div>
+            <h3>Build Apps</h3>
+            <p>We develop consumer web and mobile applications from concept through App Store launch. Our engineering team handles iOS, Android, and web — from UX design and prototyping to backend infrastructure, API integrations, and production deployment.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🔑</div>
+            <h3>Acquire Apps</h3>
+            <p>We acquire existing mobile apps and SaaS products with established user bases and proven revenue. We look for strong retention metrics, clear monetization, and untapped potential that our operational playbook can unlock.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">📈</div>
+            <h3>Scale Products</h3>
+            <p>We apply a shared infrastructure layer across our portfolio — identity verification, payment processing, analytics, growth marketing, and compliance — to scale each product efficiently without duplicating effort.</p>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Portfolio -->
+<section id="portfolio">
+    <h2>Portfolio</h2>
+    <p class="section-sub">A selection of products we've built, acquired, or are actively developing.</p>
+    <div class="portfolio-grid">
+        <div class="portfolio-card">
+            <span class="portfolio-tag tag-dev">In Development</span>
+            <h3>Amanda's List</h3>
+            <div class="domain">amandaslist.com</div>
+            <p>A verified financial compatibility platform for high-net-worth individuals. Uses Plaid-verified income and asset data to match users based on real financial profiles, not self-reported information.</p>
+        </div>
+        <div class="portfolio-card">
+            <span class="portfolio-tag tag-dev">In Development</span>
+            <h3>Hot or Bot</h3>
+            <div class="domain">hotorbot.com</div>
+            <p>An AI-powered social experiment and dating concept that uses generative video to create engaging, personality-driven matching experiences. Blurs the line between human and AI interaction.</p>
+        </div>
+        <div class="portfolio-card">
+            <span class="portfolio-tag tag-live">Active</span>
+            <h3>Mandafesto</h3>
+            <div class="domain">mandafesto.com</div>
+            <p>A content platform and blog exploring entrepreneurship, dating, feminism, and the founder journey. Features essays, podcast appearances, and original writing from our founder.</p>
+        </div>
+        <div class="portfolio-card">
+            <span class="portfolio-tag tag-acquired">Previous Exit</span>
+            <h3>The League</h3>
+            <div class="domain">Acquired by Match Group</div>
+            <p>An admissions-based dating app for ambitious professionals. Grew to 2M+ applicants, 155 cities, $16M revenue, and was acquired by Match Group (NASDAQ: MTCH) in 2022.</p>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Process -->
+<section id="process">
+    <h2>How We Work</h2>
+    <p class="section-sub">Our process for taking products from zero to market.</p>
+    <div class="process-grid">
+        <div class="process-step">
+            <h3>Identify</h3>
+            <p>We analyze market gaps in the consumer space using proprietary data, user research, and competitive intelligence.</p>
+        </div>
+        <div class="process-step">
+            <h3>Validate</h3>
+            <p>We test concepts rapidly with real users — landing pages, prototypes, and beta cohorts before committing to full development.</p>
+        </div>
+        <div class="process-step">
+            <h3>Build</h3>
+            <p>Our engineering team ships production-quality iOS, Android, and web apps using modern frameworks and our shared infrastructure layer.</p>
+        </div>
+        <div class="process-step">
+            <h3>Scale</h3>
+            <p>We optimize for retention, monetization, and growth. Every product benefits from our portfolio-wide analytics and marketing engine.</p>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Team -->
+<section id="team">
+    <h2>Leadership</h2>
+    <div class="team-grid">
+        <div class="team-card">
+            <h3>Amanda Bradford</h3>
+            <div class="role">Founder &amp; CEO</div>
+            <p>Previously founded and sold The League to Match Group. Stanford MBA. Former product roles at Google and Salesforce. Investment Partner at XFactor Ventures, backing early-stage female founders. Carnegie Mellon BS in Information Systems.</p>
+        </div>
+        <div class="team-card">
+            <h3>Engineering</h3>
+            <div class="role">Development Team</div>
+            <p>Full-stack engineering across iOS (Swift), Android (Kotlin), and web (React, Node.js). Backend infrastructure on AWS and Supabase. API integrations with Plaid, Twilio, Apple HealthKit, and more.</p>
+        </div>
+        <div class="team-card">
+            <h3>Operations</h3>
+            <div class="role">Product &amp; Growth</div>
+            <p>Product management, data analytics, growth marketing, and compliance. Our operations team ensures every app in the portfolio meets App Store guidelines, privacy regulations, and security standards.</p>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Contact -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p class="section-sub">We're always interested in hearing from potential partners, sellers, and collaborators.</p>
+    <div class="contact-grid">
+        <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value"><a href="mailto:contact@hatchlabs.com">contact@hatchlabs.com</a></div>
+            <div style="margin-top: 20px;">
+                <div class="contact-label">Phone</div>
+                <div class="contact-value"><a href="tel:+15125370232">(512) 537-0232</a></div>
+            </div>
+        </div>
+        <div>
+            <div class="contact-label">Headquarters</div>
+            <div class="contact-value">701 Tillery Street, Suite 12<br>Austin, TX 78702<br>United States</div>
+        </div>
+        <div>
+            <div class="contact-label">Legal Entity</div>
+            <div class="contact-value">Hatch Labs Holdings LLC<br>Registered in Delaware<br>D-U-N-S: 144961121</div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Newsletter -->
+<section class="waitlist-section">
+    <h2>Stay Updated</h2>
+    <p class="section-sub" style="margin: 0 auto 8px;">Get notified about new product launches and company news.</p>
     <form class="waitlist-form" id="waitlistForm" onsubmit="return submitWaitlist(event)">
-        <input type="email" id="emailInput" placeholder="Enter your email" required autocomplete="email">
-        <button type="submit" id="submitBtn">Stay Updated</button>
+        <input type="email" id="emailInput" placeholder="Your email address" required autocomplete="email">
+        <button type="submit" id="submitBtn">Subscribe</button>
     </form>
     <p class="form-msg" id="formMsg"></p>
 </section>
 
-<div class="divider"></div>
-
-<section id="about">
-    <h2>About Hatch Labs</h2>
-    <div class="about-grid">
-        <div>
-            <p>Hatch Labs Holdings LLC is a venture studio headquartered in Austin, Texas. We identify opportunities in the consumer mobile space, build products from scratch, and acquire existing apps with strong fundamentals and growth potential.</p>
-            <p style="margin-top: 16px;">Our approach combines deep product expertise, data-driven decision making, and lean operations. We focus on categories where technology can meaningfully improve how people connect, communicate, and make decisions.</p>
-        </div>
-        <div>
-            <p>Founded by Amanda Bradford — who previously built and sold The League, a dating app acquired by Match Group — Hatch Labs brings a founder's operational mindset to every product in our portfolio.</p>
-            <p style="margin-top: 16px;">We are a registered Delaware LLC with a physical office in Austin. We work with partners including Plaid, Apple, Google, and Amazon to bring our products to market.</p>
-        </div>
-    </div>
-</section>
-
-<div class="divider"></div>
-
-<section id="what-we-do">
-    <h2>What We Do</h2>
-    <div class="card-grid">
-        <div class="card">
-            <h3>Build</h3>
-            <p>We develop consumer mobile applications from concept through launch. Our current portfolio includes products in dating, social networking, and personal finance — categories where verified identity and real data create better user experiences.</p>
-        </div>
-        <div class="card">
-            <h3>Acquire</h3>
-            <p>We acquire existing mobile apps with established user bases and revenue. We look for products with strong retention, clear monetization, and opportunities to improve through better technology and operations.</p>
-        </div>
-        <div class="card">
-            <h3>Scale</h3>
-            <p>We apply a shared infrastructure layer across our portfolio — identity verification, payment processing, analytics, and growth marketing — to scale apps efficiently without reinventing the wheel for each product.</p>
-        </div>
-    </div>
-</section>
-
-<div class="divider"></div>
-
-<section id="team">
-    <h2>Leadership</h2>
-    <div class="team-member">
-        <div class="team-avatar">AB</div>
-        <div class="team-info">
-            <h3>Amanda Bradford</h3>
-            <div class="role">Founder &amp; CEO</div>
-            <p>Previously founded The League, an admissions-based dating app that grew to 2M+ applicants across 155 cities and was acquired by Match Group. Stanford MBA. Former product roles at Google and Salesforce. Investment Partner at XFactor Ventures.</p>
-        </div>
-    </div>
-</section>
-
-<div class="divider"></div>
-
-<section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-grid">
-        <div>
-            <div class="contact-item">
-                <div class="contact-label">Email</div>
-                <div class="contact-value"><a href="mailto:contact@hatchlabs.com">contact@hatchlabs.com</a></div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-label">Phone</div>
-                <div class="contact-value"><a href="tel:+15125370232">(512) 537-0232</a></div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-label">Website</div>
-                <div class="contact-value"><a href="https://hatchlabs.com">hatchlabs.com</a></div>
-            </div>
-        </div>
-        <div>
-            <div class="contact-item">
-                <div class="contact-label">Address</div>
-                <div class="contact-value">701 Tillery Street, Suite 12<br>Austin, TX 78702<br>United States</div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-label">Entity</div>
-                <div class="contact-value">Hatch Labs Holdings LLC<br>Delaware LLC<br>D-U-N-S: 144961121</div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <footer>
-    <p>&copy; 2026 Hatch Labs Holdings LLC. All rights reserved. &middot; <a href="/privacy/">Privacy Policy</a> &middot; <a href="/terms/">Terms of Service</a></p>
+    <p>&copy; 2026 Hatch Labs Holdings LLC. All rights reserved.</p>
+    <p style="margin-top: 8px;"><a href="/privacy/">Privacy Policy</a> &middot; <a href="/terms/">Terms of Service</a> &middot; <a href="mailto:contact@hatchlabs.com">contact@hatchlabs.com</a></p>
 </footer>
 
 <script>
@@ -276,11 +330,11 @@
                 headers: { 'apikey': SUPABASE_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
                 body: JSON.stringify({ email, site_url: window.location.href, site_name: 'Hatch Labs' })
             });
-            if (res.ok) { msg.textContent = "You're on the list!"; msg.className = 'form-msg success'; document.getElementById('emailInput').value = ''; }
-            else if (res.status === 409) { msg.textContent = "You're already on the list!"; msg.className = 'form-msg success'; }
+            if (res.ok) { msg.textContent = "You're subscribed!"; msg.className = 'form-msg success'; document.getElementById('emailInput').value = ''; }
+            else if (res.status === 409) { msg.textContent = "You're already subscribed!"; msg.className = 'form-msg success'; }
             else { throw new Error(); }
         } catch { msg.textContent = 'Something went wrong. Email contact@hatchlabs.com'; msg.className = 'form-msg error'; }
-        btn.disabled = false; btn.textContent = 'Stay Updated';
+        btn.disabled = false; btn.textContent = 'Subscribe';
         return false;
     }
 </script>
