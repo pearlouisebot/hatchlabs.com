@@ -3,266 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hatch Labs</title>
-    <meta name="description" content="Hatch Labs: Building Tools for Humans">
+    <title>Hatch Labs — Venture Studio</title>
+    <meta name="description" content="Hatch Labs Holdings LLC is an Austin-based venture studio that builds and acquires mobile applications.">
     <meta property="og:site_name" content="Hatch Labs">
-    <meta property="og:title" content="Hatch Labs">
+    <meta property="og:title" content="Hatch Labs — Venture Studio">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="Hatch Labs: Building Tools for Humans">
-    <meta property="og:image" content="card.jpg">
+    <meta property="og:description" content="Hatch Labs Holdings LLC is an Austin-based venture studio that builds and acquires mobile applications.">
     <meta property="og:url" content="https://hatchlabs.com">
     <meta property="twitter:card" content="summary_large_image">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&family=Sora:wght@600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Sora:wght@600;800&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
-            background: #121212;
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow-x: hidden;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.7;
         }
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background: url('bg.svg') center/cover no-repeat;
-            z-index: 0;
-            pointer-events: none;
+        a { color: #FFD900; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Nav */
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(10,10,10,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 0 24px;
         }
-        .container {
-            position: relative;
-            z-index: 1;
-            max-width: 540px;
-            width: 100%;
-            padding: 48px 24px;
+        .nav-inner {
+            max-width: 960px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 64px;
         }
-        .badge {
-            text-transform: uppercase;
-            font-size: 0.75em;
-            letter-spacing: 0.3rem;
-            color: #FFD900;
-            font-weight: 300;
-            margin-bottom: 24px;
-        }
-        h1 {
+        .nav-logo {
             font-family: 'Sora', sans-serif;
-            font-size: clamp(3rem, 8vw, 5.75rem);
-            font-weight: 600;
-            line-height: 1;
-            margin-bottom: 20px;
+            font-size: 1.15rem; font-weight: 600; color: #fff;
+            letter-spacing: 0.02em;
         }
-        .subtitle {
-            color: rgba(255,255,255,0.58);
-            font-size: 1em;
-            line-height: 2.125;
-            font-weight: 200;
-            letter-spacing: 0.025rem;
-            margin-bottom: 36px;
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a {
+            color: rgba(255,255,255,0.6); font-size: 0.875rem; font-weight: 400;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: #fff; text-decoration: none; }
+
+        /* Sections */
+        section { max-width: 960px; margin: 0 auto; padding: 80px 24px; }
+        .hero { text-align: center; padding: 100px 24px 80px; }
+        .hero h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 600; color: #fff; line-height: 1.15; margin-bottom: 20px;
+        }
+        .hero p { color: rgba(255,255,255,0.55); font-size: 1.1rem; font-weight: 300; max-width: 600px; margin: 0 auto 40px; }
+
+        h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.75rem; font-weight: 600; color: #fff; margin-bottom: 24px;
+        }
+        .divider {
+            width: 100%; height: 1px;
+            background: rgba(255,255,255,0.08);
         }
 
-        /* Waitlist form */
+        /* Cards */
+        .card-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px; margin-top: 32px;
+        }
+        .card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; padding: 32px;
+        }
+        .card h3 { color: #fff; font-size: 1.1rem; margin-bottom: 8px; }
+        .card p { color: rgba(255,255,255,0.5); font-size: 0.9rem; font-weight: 300; }
+
+        /* About */
+        .about-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px;
+        }
+        .about-grid p { color: rgba(255,255,255,0.55); font-weight: 300; }
+
+        /* Team */
+        .team-member {
+            display: flex; gap: 20px; align-items: flex-start;
+            margin-top: 24px;
+        }
+        .team-avatar {
+            width: 64px; height: 64px; border-radius: 50%;
+            background: rgba(255,217,0,0.15); display: flex; align-items: center;
+            justify-content: center; font-size: 1.5rem; flex-shrink: 0;
+        }
+        .team-info h3 { color: #fff; font-size: 1rem; margin-bottom: 2px; }
+        .team-info .role { color: #FFD900; font-size: 0.85rem; font-weight: 400; }
+        .team-info p { color: rgba(255,255,255,0.5); font-size: 0.875rem; font-weight: 300; margin-top: 6px; }
+
+        /* Contact */
+        .contact-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px;
+        }
+        .contact-item { margin-bottom: 24px; }
+        .contact-label { color: rgba(255,255,255,0.4); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+        .contact-value { color: #fff; font-size: 1rem; }
+
+        /* Waitlist */
         .waitlist-form {
-            display: flex;
-            gap: 8px;
-            max-width: 420px;
-            margin: 0 auto 16px;
+            display: flex; gap: 8px; max-width: 420px; margin: 0 auto;
         }
         .waitlist-form input[type="email"] {
-            flex: 1;
-            padding: 14px 18px;
-            border-radius: 2rem;
+            flex: 1; padding: 14px 18px; border-radius: 2rem;
             border: 1px solid rgba(255,255,255,0.15);
-            background: rgba(255,255,255,0.06);
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.875em;
-            font-weight: 300;
-            outline: none;
-            transition: border-color 0.25s;
+            background: rgba(255,255,255,0.06); color: #fff;
+            font-family: 'Inter', sans-serif; font-size: 0.875em; font-weight: 300; outline: none;
         }
-        .waitlist-form input[type="email"]::placeholder {
-            color: rgba(255,255,255,0.35);
-        }
-        .waitlist-form input[type="email"]:focus {
-            border-color: #FFD900;
-        }
+        .waitlist-form input:focus { border-color: #FFD900; }
+        .waitlist-form input::placeholder { color: rgba(255,255,255,0.35); }
         .waitlist-form button {
-            padding: 14px 28px;
-            border-radius: 2rem;
-            border: none;
-            background: #FFD900;
-            color: #000;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.75em;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.2rem;
-            cursor: pointer;
-            transition: background 0.25s, transform 0.25s;
-            white-space: nowrap;
+            padding: 14px 28px; border-radius: 2rem; border: none;
+            background: #FFD900; color: #000; font-family: 'Inter', sans-serif;
+            font-size: 0.75em; font-weight: 500; text-transform: uppercase;
+            letter-spacing: 0.2rem; cursor: pointer; white-space: nowrap;
+            transition: background 0.25s;
         }
-        .waitlist-form button:hover {
-            background: #FFE552;
-            transform: scale(1.04);
-        }
-        .waitlist-form button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
-        .form-msg {
-            font-size: 0.8em;
-            font-weight: 300;
-            min-height: 1.5em;
-            margin-bottom: 32px;
-            transition: opacity 0.3s;
-        }
+        .waitlist-form button:hover { background: #FFE552; }
+        .form-msg { font-size: 0.8em; font-weight: 300; min-height: 1.5em; margin-top: 12px; text-align: center; }
         .form-msg.success { color: #4ade80; }
         .form-msg.error { color: #f87171; }
 
-        /* Divider */
-        .divider {
-            width: 100%;
-            height: 1px;
-            background: rgba(255,255,255,0.12);
-            margin: 40px 0;
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 32px 24px; text-align: center;
+            color: rgba(255,255,255,0.3); font-size: 0.8rem;
         }
+        footer a { color: rgba(255,255,255,0.4); }
 
-        /* Social icons */
-        .social {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-        .social a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border: none;
-            border-radius: 0;
-            color: #fff;
-            text-decoration: none;
-            transition: transform 0.25s, opacity 0.25s;
-            background: transparent;
-            opacity: 0.5;
-        }
-        .social a:hover {
-            transform: translateY(-3px);
-            opacity: 1;
-        }
-        .social a svg {
-            width: 22px;
-            height: 22px;
-            fill: #fff;
-        }
-
-        .footer {
-            margin-top: 40px;
-            color: rgba(255,255,255,0.29);
-            font-size: 0.875em;
-            font-weight: 200;
-        }
-
-        @media (max-width: 480px) {
-            .waitlist-form {
-                flex-direction: column;
-            }
-            .waitlist-form button {
-                width: 100%;
-            }
+        @media (max-width: 640px) {
+            .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+            .waitlist-form { flex-direction: column; }
+            .waitlist-form button { width: 100%; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <p class="badge"><strong>Hatch Labs</strong></p>
-        <h1>Sign up to learn more</h1>
-        <p class="subtitle">Building Tools for Humans</p>
 
-        <form class="waitlist-form" id="waitlistForm" onsubmit="return submitWaitlist(event)">
-            <input type="email" id="emailInput" placeholder="Enter your email" required autocomplete="email">
-            <button type="submit" id="submitBtn">Get Notified</button>
-        </form>
-        <p class="form-msg" id="formMsg"></p>
-
-        <p class="subtitle" style="margin-top: 2rem;">Hatch Labs Holdings LLC is a venture studio that builds and buys mobile apps. Contact us at <a href="mailto:contact@hatchlabs.com" style="color: #4A90D9; text-decoration: none;">contact@hatchlabs.com</a> for more information.</p>
-
-        <div class="divider"></div>
-
-        <div class="social">
-            <a href="https://twitter.com/haborlabs" target="_blank" title="Twitter">
-                <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="https://instagram.com/hatchlabs" target="_blank" title="Instagram">
-                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-            <a href="mailto:contact@hatchlabs.com" title="Email">
-                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            </a>
-        </div>
-
-        <p class="footer">© 2026 Hatch Labs. All rights reserved. · <a href="/terms/" style="color: #FFD900; text-decoration: none;">Terms</a></p>
+<nav>
+    <div class="nav-inner">
+        <div class="nav-logo">Hatch Labs</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#what-we-do">What We Do</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="/privacy/">Privacy</a></li>
+            <li><a href="/terms/">Terms</a></li>
+        </ul>
     </div>
+</nav>
 
-    <script>
-        const SUPABASE_URL = 'https://kxyqdzkoyuzszcyfvpee.supabase.co';
-        const SUPABASE_KEY = 'sb_publishable_aXDS4SvG7aMZKExyNPTbgA_mBzZdQZU';
+<section class="hero">
+    <h1>We build and acquire mobile apps.</h1>
+    <p>Hatch Labs Holdings LLC is an Austin-based venture studio focused on building, buying, and scaling consumer mobile applications.</p>
+    <form class="waitlist-form" id="waitlistForm" onsubmit="return submitWaitlist(event)">
+        <input type="email" id="emailInput" placeholder="Enter your email" required autocomplete="email">
+        <button type="submit" id="submitBtn">Stay Updated</button>
+    </form>
+    <p class="form-msg" id="formMsg"></p>
+</section>
 
-        async function submitWaitlist(e) {
-            e.preventDefault();
-            const btn = document.getElementById('submitBtn');
-            const msg = document.getElementById('formMsg');
-            const email = document.getElementById('emailInput').value.trim();
+<div class="divider"></div>
 
-            if (!email) return false;
+<section id="about">
+    <h2>About Hatch Labs</h2>
+    <div class="about-grid">
+        <div>
+            <p>Hatch Labs Holdings LLC is a venture studio headquartered in Austin, Texas. We identify opportunities in the consumer mobile space, build products from scratch, and acquire existing apps with strong fundamentals and growth potential.</p>
+            <p style="margin-top: 16px;">Our approach combines deep product expertise, data-driven decision making, and lean operations. We focus on categories where technology can meaningfully improve how people connect, communicate, and make decisions.</p>
+        </div>
+        <div>
+            <p>Founded by Amanda Bradford — who previously built and sold The League, a dating app acquired by Match Group — Hatch Labs brings a founder's operational mindset to every product in our portfolio.</p>
+            <p style="margin-top: 16px;">We are a registered Delaware LLC with a physical office in Austin. We work with partners including Plaid, Apple, Google, and Amazon to bring our products to market.</p>
+        </div>
+    </div>
+</section>
 
-            btn.disabled = true;
-            btn.textContent = 'Sending...';
-            msg.textContent = '';
-            msg.className = 'form-msg';
+<div class="divider"></div>
 
-            try {
-                const res = await fetch(SUPABASE_URL + '/rest/v1/waitlist', {
-                    method: 'POST',
-                    headers: {
-                        'apikey': SUPABASE_KEY,
-                        'Content-Type': 'application/json',
-                        'Prefer': 'return=minimal'
-                    },
-                    body: JSON.stringify({
-                        email: email,
-                        site_url: window.location.href,
-                        site_name: 'Hatch Labs'
-                    })
-                });
+<section id="what-we-do">
+    <h2>What We Do</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>Build</h3>
+            <p>We develop consumer mobile applications from concept through launch. Our current portfolio includes products in dating, social networking, and personal finance — categories where verified identity and real data create better user experiences.</p>
+        </div>
+        <div class="card">
+            <h3>Acquire</h3>
+            <p>We acquire existing mobile apps with established user bases and revenue. We look for products with strong retention, clear monetization, and opportunities to improve through better technology and operations.</p>
+        </div>
+        <div class="card">
+            <h3>Scale</h3>
+            <p>We apply a shared infrastructure layer across our portfolio — identity verification, payment processing, analytics, and growth marketing — to scale apps efficiently without reinventing the wheel for each product.</p>
+        </div>
+    </div>
+</section>
 
-                if (res.ok) {
-                    msg.textContent = "You're on the list! We'll be in touch.";
-                    msg.className = 'form-msg success';
-                    document.getElementById('emailInput').value = '';
-                } else if (res.status === 409) {
-                    msg.textContent = "You're already on the list!";
-                    msg.className = 'form-msg success';
-                } else {
-                    throw new Error('Server error');
-                }
-            } catch (err) {
-                msg.textContent = 'Something went wrong. Try again or email contact@hatchlabs.com';
-                msg.className = 'form-msg error';
-            }
+<div class="divider"></div>
 
-            btn.disabled = false;
-            btn.textContent = 'Get Notified';
-            return false;
-        }
-    </script>
+<section id="team">
+    <h2>Leadership</h2>
+    <div class="team-member">
+        <div class="team-avatar">AB</div>
+        <div class="team-info">
+            <h3>Amanda Bradford</h3>
+            <div class="role">Founder &amp; CEO</div>
+            <p>Previously founded The League, an admissions-based dating app that grew to 2M+ applicants across 155 cities and was acquired by Match Group. Stanford MBA. Former product roles at Google and Salesforce. Investment Partner at XFactor Ventures.</p>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+        <div>
+            <div class="contact-item">
+                <div class="contact-label">Email</div>
+                <div class="contact-value"><a href="mailto:contact@hatchlabs.com">contact@hatchlabs.com</a></div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-label">Website</div>
+                <div class="contact-value"><a href="https://hatchlabs.com">hatchlabs.com</a></div>
+            </div>
+        </div>
+        <div>
+            <div class="contact-item">
+                <div class="contact-label">Address</div>
+                <div class="contact-value">701 Tillery Street, Suite 12<br>Austin, TX 78702</div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-label">Entity</div>
+                <div class="contact-value">Hatch Labs Holdings LLC<br>Delaware LLC<br>D-U-N-S: 144961121</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Hatch Labs Holdings LLC. All rights reserved. &middot; <a href="/privacy/">Privacy Policy</a> &middot; <a href="/terms/">Terms of Service</a></p>
+</footer>
+
+<script>
+    const SUPABASE_URL = 'https://kxyqdzkoyuzszcyfvpee.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_aXDS4SvG7aMZKExyNPTbgA_mBzZdQZU';
+    async function submitWaitlist(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        const msg = document.getElementById('formMsg');
+        const email = document.getElementById('emailInput').value.trim();
+        if (!email) return false;
+        btn.disabled = true; btn.textContent = 'Sending...';
+        msg.textContent = ''; msg.className = 'form-msg';
+        try {
+            const res = await fetch(SUPABASE_URL + '/rest/v1/waitlist', {
+                method: 'POST',
+                headers: { 'apikey': SUPABASE_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+                body: JSON.stringify({ email, site_url: window.location.href, site_name: 'Hatch Labs' })
+            });
+            if (res.ok) { msg.textContent = "You're on the list!"; msg.className = 'form-msg success'; document.getElementById('emailInput').value = ''; }
+            else if (res.status === 409) { msg.textContent = "You're already on the list!"; msg.className = 'form-msg success'; }
+            else { throw new Error(); }
+        } catch { msg.textContent = 'Something went wrong. Email contact@hatchlabs.com'; msg.className = 'form-msg error'; }
+        btn.disabled = false; btn.textContent = 'Stay Updated';
+        return false;
+    }
+</script>
 </body>
 </html>
